@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor": "#050305",
+  "backgroundColor": "#ffffff",
+  "navigationBarTitleText": "HandsUp",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "van-button": "/static/@vant/weapp/dist/button/index",
+    "van-image": "/static/@vant/weapp/dist/image/index",
+    "van-tab": "/static/@vant/weapp/dist/tab/index",
+    "van-tabs": "/static/@vant/weapp/dist/tabs/index"
+  }
+}

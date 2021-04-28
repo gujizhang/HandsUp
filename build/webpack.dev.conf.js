@@ -1,3 +1,10 @@
+/*
+ * @Author: wangyang
+ * @LastEditors: wangyang
+ * @Description: file content
+ * @Date: 2019-03-29 10:11:14
+ * @LastEditTime: 2019-04-09 23:32:43
+ */
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
@@ -9,6 +16,7 @@ var MpvueVendorPlugin = require('webpack-mpvue-vendor-plugin')
 
 // copy from ./webpack.prod.conf.js
 var path = require('path')
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
@@ -58,9 +66,9 @@ module.exports = merge(baseWebpackConfig, {
       minChunks: function (module, count) {
         // any required modules inside node_modules are extracted to vendor
         return (
-          module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf('node_modules') >= 0
+            module.resource &&
+            /\.js$/.test(module.resource) &&
+            module.resource.indexOf('node_modules') >= 0
         ) || count > 1
       }
     }),
@@ -80,6 +88,10 @@ module.exports = merge(baseWebpackConfig, {
     //   template: 'index.html',
     //   inject: true
     // }),
-    new FriendlyErrorsPlugin()
+    new FriendlyErrorsPlugin(),
+    // new UglifyJsPlugin({
+    //   sourceMap: true
+    // })
+    
   ]
 })

@@ -69,6 +69,8 @@ let baseWebpackConfig = {
             options: Object.assign({checkMPEntry: true}, vueLoaderConfig)
           },
         ]
+      },{
+        test:/.less$/,loader:"style-loader!css-lodader!less-loader"
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -90,7 +92,7 @@ let baseWebpackConfig = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 100000000,
           name: utils.assetsPath('fonts/[name].[ext]')
         }
       }

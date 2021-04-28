@@ -23,6 +23,9 @@
     "build": "node build/build.js wx"
   },
   "dependencies": {
+    "@vant/weapp": "^1.6.8",
+    "less": "^4.1.1",
+    "less-loader": "^8.1.1",
     "mpvue": "^2.0.0",
     "vuex": "^3.0.1"
   },
