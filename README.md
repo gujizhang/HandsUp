@@ -1,6 +1,7 @@
 # handsup
 
 > A Mpvue project
+> 关于交互的mpvue框架小程序
 
 ## Build Setup
 
